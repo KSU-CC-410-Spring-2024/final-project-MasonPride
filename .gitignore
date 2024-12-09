@@ -1,0 +1,5 @@
+__pycache__/
+.tox
+reports/
+.coverage
+*.pyc
