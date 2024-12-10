@@ -1,44 +1,3 @@
-.menu-title {
-    text-align: center;
-    padding: 50px;
-    font-size: 5em;
-}
-
-.item-heading{
-    padding-top: 40px;
-}
-
-ul.menu-list {
-    padding: 15px;
-    margin: 10px;
-    border-top: 1px solid grey;
-}
-
-.menu-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.menu-item {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    width: 335px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Menu item title */
-.menu-item h3 {
-    font-size: 1.1em;
-    margin-bottom: 5px;
-}
-
-/* Price and calorie info */
-.menu-item p {
-    font-size: 0.9em;
-    color: #3f3f3f;
-}
 
 /* Bootstrap */
 /* Custom page CSS
@@ -61,4 +20,39 @@ main > .container {
 
 code {
   font-size: 80%;
+}
+
+.navbar {
+    background-color: rgb(84, 164, 255);
+    display: flex;
+    justify-content: space-between; /* Space out brand and links */
+    align-items: center; /* Ensure both brand and links are vertically centered */
+    width: 100%; /* Ensure the navbar spans the full width of the screen */
+    padding-left: 50px; /* Padding for the left side */
+    padding-right: 15px; /* Padding for the right side */
+}
+
+.navbar-brand  {
+    color: #ffffff !important;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: x-large;
+}
+
+.navbar .nav-link {
+    color: #ffffff !important;
+    transition: color 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: large;
+    font-weight: bold;
+}
+
+.navbar .navbar-collapse {
+    display: flex;
+    justify-content: center; /* Center the links container horizontally */
+    flex-grow: 1; /* Allow links container to take up the remaining space */
+}
+
+.navbar .nav-link:hover {
+    color: grey !important;
 }

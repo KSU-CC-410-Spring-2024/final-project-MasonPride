@@ -8,16 +8,16 @@ Version: 0.1
 from src.SecondhandAuto.data.trucks.Truck import Truck
 
 
-class Chevrolet(Truck):
-    """Represents a Chevrolet truck.
+class DodgeTruck(Truck):
+    """Represents a Dodge truck.
 
-    Builds a Chevrolet truck.
+    Builds a Dodge truck.
     """
 
     def __init__(self) -> None:
-        """Chevrolet class constructor.
+        """Dodge class constructor.
 
-        Creates an instance of a Chevrolet
+        Creates an instance of a Dodge
         truck.
         """
         super().__init__()

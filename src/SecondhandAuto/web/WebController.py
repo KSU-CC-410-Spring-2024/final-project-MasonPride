@@ -8,6 +8,7 @@ Version: 0.1
 from flask import render_template, request
 from flask_classful import FlaskView, route  # type: ignore
 #from src.gamegrub.data.menu.Menu import Menu
+from src.SecondhandAuto.api.GetMarketValue import GetMarketValue
 
 
 class WebController(FlaskView):
@@ -24,3 +25,23 @@ class WebController(FlaskView):
             render template of index
         """
         return render_template("index.html")
+
+    @route('/market-value/', methods=['GET'])
+    def market_value(self):
+        """Market value.
+
+        Loads the market value page
+        """
+        return render_template("market_value.html")
+
+    @route('/market-value/', methods=['POST'])
+    def market_value_result(self):
+        """Market value.
+
+        Loads the market value page
+        """
+        year: str = request.form.get('year', None)
+        make: str = request.form.get('make', None)
+        model: str = request.form.get('model', None)
+        data = GetMarketValue.get_value(year, make, model)
+        return render_template("market_value.html", data=data)

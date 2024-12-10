@@ -1,6 +1,6 @@
-"""Chevrolet class.
+"""Ford class.
 
-This class creates a Chevrolet truck.
+This class creates a Ford truck.
 
 Author: Mason Pride
 Version: 0.1
@@ -8,22 +8,22 @@ Version: 0.1
 from src.SecondhandAuto.data.trucks.Truck import Truck
 
 
-class Chevrolet(Truck):
-    """Represents a Chevrolet truck.
+class FordTruck(Truck):
+    """Represents a Ford truck.
 
     Builds a Chevrolet truck.
     """
 
     def __init__(self) -> None:
-        """Chevrolet class constructor.
+        """Ford class constructor.
 
-        Creates an instance of a Chevrolet
+        Creates an instance of a Ford
         truck.
         """
         super().__init__()
-        self.four_wd: bool = True
-        self.cab_type: str = "Extended Cab"
-        self.__color: str = "Red"
+        self.four_wd: bool = False
+        self.cab_type: str = "Super Cab"
+        self.__color: str = "White"
 
     @property
     def price(self) -> int:
@@ -31,7 +31,7 @@ class Chevrolet(Truck):
 
         Returns the price of the truck.
         """
-        return 8500
+        return 21000
 
     @property
     def color(self) -> str:
@@ -47,7 +47,7 @@ class Chevrolet(Truck):
 
         Gets the year of the truck
         """
-        return 1997
+        return 2019
 
     @property
     def make(self) -> str:
@@ -55,7 +55,7 @@ class Chevrolet(Truck):
 
         Gets the make of the truck.
         """
-        return "Chevrolet"
+        return "Ford"
 
     @property
     def model(self) -> str:
@@ -63,7 +63,7 @@ class Chevrolet(Truck):
 
         Gets the model of the Truck
         """
-        return "Silverado 1500"
+        return "Ranger"
 
     def __str__(self) -> str:
         """String override method."""
