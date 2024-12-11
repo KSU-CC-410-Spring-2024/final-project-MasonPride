@@ -34,7 +34,7 @@ class Vehicle(ABC):
 
     @property
     @abstractmethod
-    def make(self) -> float:
+    def make(self) -> str:
         """Make getter.
 
         Raises NotImplementedError.
@@ -43,7 +43,7 @@ class Vehicle(ABC):
 
     @property
     @abstractmethod
-    def model(self) -> float:
+    def model(self) -> str:
         """Model getter.
 
         Raises NotImplementedError.
@@ -52,7 +52,7 @@ class Vehicle(ABC):
 
     @property
     @abstractmethod
-    def year(self) -> float:
+    def year(self) -> int:
         """Year getter.
 
         Raises NotImplementedError.

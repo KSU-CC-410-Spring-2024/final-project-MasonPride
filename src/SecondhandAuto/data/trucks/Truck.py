@@ -50,7 +50,7 @@ class Truck(Vehicle):
         return self.__cab_type
 
     @cab_type.setter
-    def cab_type(self, value: bool) -> None:
+    def cab_type(self, value: str) -> None:
         """Setter for cab_type attrribute.
 
         Sets the cab type attribute

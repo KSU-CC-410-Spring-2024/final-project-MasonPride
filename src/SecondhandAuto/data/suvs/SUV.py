@@ -42,7 +42,7 @@ class SUV(Vehicle):
         self.__backup_cam = value
 
     @property
-    def folded_seats(self) -> str:
+    def folded_seats(self) -> bool:
         """Getter for folded_seats attrribute.
 
         Gets the folded_seats attribute

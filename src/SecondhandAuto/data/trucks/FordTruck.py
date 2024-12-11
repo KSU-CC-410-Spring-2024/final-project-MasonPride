@@ -65,6 +65,16 @@ class FordTruck(Truck):
         """
         return "Ranger"
 
+    @property
+    def mileage(self) -> int:
+        """Mileage getter method.
+
+        Gets the mileage of the Truck
+        """
+        return 200000
+
     def __str__(self) -> str:
         """String override method."""
-        return "{} {} {}".format(str(self.year), self.make, self.model)
+        return "{} {} {}".format(str(self.year),
+                                 self.make,
+                                 self.model)

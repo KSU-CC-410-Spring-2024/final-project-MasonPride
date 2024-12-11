@@ -1,35 +1,41 @@
 {% extends "layout.html" %}
 
-{% block title %}Menu{% endblock %}
+{% block title %}Lot{% endblock %}
 
 {% block content %}
 
-<h1 class="menu-title">Lot</h1>
+<div class="jumbotron mt-2">
+  <h3 class="lot-top">Check out what we currently have on our lot!</h3>
+</div>
 
-<h2 class="item-heading">Trucks</h2>
+<h2 class="item-heading">Truck</h2>
 <ul class="vehicle-list">
 {% for truck in lot.trucks() %}
         <div class="vehicle">
             <h5>{{truck}}</h5>
-            <p>{{ "${:,.2f}".format(truck.price) }}</p>
-            <p>{{ truck.color }}</p>
+            <p>{{ "${:,}".format(truck.price) }}</p>
+            <p>Color: {{ truck.color }}</p>
             {% if truck.four_wd %}
             <p>Four Wheel Drive: Yes</p>
             {% else %}
             <p>Four Wheel Drive: No</p>
             {% endif %}
             <p>Cab Type: {{ truck.cab_type }}</p>
+            <p>Mileage: {{ "{:,}".format(truck.mileage) }}</p>
+            <div class="buy-button">
+                <a class="btn btn-primary btn-lg mx-2 mt-3" role="button">Buy</a>
+            </div>
         </div>
 {% endfor %}
 </ul>
 
-<h2 class="item-heading">SUV's</h2>
+<h2 class="item-heading">SUV</h2>
 <ul class="vehicle-list">
 {% for suv in lot.suvs() %}
         <div class="vehicle">
             <h5>{{suv}}</h5>
             <p>{{ "${:,.2f}".format(suv.price) }}</p>
-            <p>{{ suv.color }}</p>
+            <p>Color: {{ suv.color }}</p>
             {% if suv.backup_cam %}
             <p>Backup Camera: Yes</p>
             {% else %}
@@ -40,6 +46,35 @@
             {% else %}
             <p>Folding Seats: No</p>
             {% endif %}
+            <p>Mileage: {{ "{:,}".format(suv.mileage) }}</p>
+            <div class="buy-button">
+                <a class="btn btn-primary btn-lg mx-2 mt-3" role="button">Buy</a>
+            </div>
+        </div>
+{% endfor %}
+</ul>
+
+<h2 class="item-heading">Sedan</h2>
+<ul class="vehicle-list">
+{% for sedan in lot.sedans() %}
+        <div class="vehicle">
+            <h5>{{sedan}}</h5>
+            <p>{{ "${:,.2f}".format(sedan.price) }}</p>
+            <p>Color: {{ sedan.color }}</p>
+            {% if sedan.led_lights %}
+            <p>LED Lights: Yes</p>
+            {% else %}
+            <p>LED Lights: No</p>
+            {% endif %}
+            {% if sedan.nav_system %}
+            <p>Navigation System: Yes</p>
+            {% else %}
+            <p>Navigation System: No</p>
+            {% endif %}
+            <p>Mileage: {{ "{:,}".format(sedan.mileage) }}</p>
+            <div class="buy-button">
+                <a class="btn btn-primary btn-lg mx-2 mt-3" role="button">Buy</a>
+            </div>
         </div>
 {% endfor %}
 </ul>

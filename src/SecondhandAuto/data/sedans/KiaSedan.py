@@ -1,43 +1,42 @@
-"""Chevrolet SUV class.
+"""Kia Sedan class.
 
-This class creates a Chevrolet suv.
+This class creates a Kia Sedan.
 
 Author: Mason Pride
 Version: 0.1
 """
-from src.SecondhandAuto.data.suvs.SUV import SUV
+from src.SecondhandAuto.data.sedans.Sedan import Sedan
 
 
-class ChevroletSUV(SUV):
-    """Represents a Chevrolet suv.
+class KiaSedan(Sedan):
+    """Represents a Kia Sedan.
 
-    Builds a Chevrolet suv.
+    Builds a Kia Sedan.
     """
-
     def __init__(self) -> None:
-        """Chevrolet class constructor.
+        """Kia class constructor.
 
-        Creates an instance of a Chevrolet
-        suv.
+        Creates an instance of a Kia
+        Sedan.
         """
         super().__init__()
-        self.backup_cam: bool = False
-        self.folded_seats: bool = True
-        self.__color: str = "Red"
+        self.led_lights: bool = False
+        self.nav_system: bool = True
+        self.__color: str = "Beige"
 
     @property
     def price(self) -> int:
         """Price getter method.
 
-        Returns the price of the suv.
+        Returns the price of the sedan.
         """
-        return 8500
+        return 9000
 
     @property
     def color(self) -> str:
         """Color getter method.
 
-        Returns the color of the suv.
+        Returns the color of the sedan.
         """
         return self.__color
 
@@ -45,25 +44,25 @@ class ChevroletSUV(SUV):
     def year(self) -> int:
         """Year getter method.
 
-        Gets the year of the suv
+        Gets the year of the sedan
         """
-        return 2009
+        return 2010
 
     @property
     def make(self) -> str:
         """Make getter method.
 
-        Gets the make of the suv.
+        Gets the make of the sedan.
         """
-        return "Chevrolet"
+        return "Kia"
 
     @property
     def model(self) -> str:
         """Model getter method.
 
-        Gets the model of the suv
+        Gets the model of the sedan
         """
-        return "Trailblazer"
+        return "Forte"
 
     @property
     def mileage(self) -> int:
@@ -71,7 +70,7 @@ class ChevroletSUV(SUV):
 
         Gets the mileage of the Truck
         """
-        return 120500
+        return 178000
 
     def __str__(self) -> str:
         """String override method."""

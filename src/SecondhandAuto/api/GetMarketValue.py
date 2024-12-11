@@ -7,16 +7,32 @@ Author: Mason Pride
 Version: 0.1
 """
 import requests
-import json
 from typing import List
 import creds
 
 
 class GetMarketValue:
+    """Get Market Value class."""
     @staticmethod
     def get_value(year: str, make: str, model: str) -> List[str]:
+        """Get value method.
+
+        Gets the values from the API using
+        year, make and model.
+
+        Args:
+            year: str
+            make: str
+            model: str
+
+        Returns:
+            List[str] representing our data
+        """
         api_key = creds.api_key
-        url = f"https://mc-api.marketcheck.com/v2/sales/car?api_key={api_key}&ymm={year}|{make}|{model}"
+        url = (
+            f"https://mc-api.marketcheck.com/v2/sales/car?"
+            f"api_key={api_key}&ymm={year}|{make}|{model}"
+        )
 
         try:
             response = requests.get(url)
@@ -30,5 +46,5 @@ class GetMarketValue:
             data_list.append(data["price_stats"]["max"])
             data_list.append(data["price_stats"]["geometric_mean"])
             return data_list
-        except requests.exceptions.RequestException as e:
+        except requests.exceptions.RequestException:
             raise ValueError("Not a valid input")

@@ -7,6 +7,8 @@ Version: 0.1
 """
 from typing import List
 from src.SecondhandAuto.data.lot.Lot import Lot
+
+
 class Main:
     """Main Class."""
 

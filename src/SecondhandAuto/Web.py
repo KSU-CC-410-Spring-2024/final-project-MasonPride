@@ -1,4 +1,4 @@
-"""Web class for SecondhandAuto
+"""Web class for SecondhandAuto.
 
 Author: Mason Pride
 Version: 0.1
