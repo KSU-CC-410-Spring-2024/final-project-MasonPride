@@ -1,9 +1,42 @@
 {% extends "layout.html" %}
 
-{% block title %}Homepage{% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block content %}
-<h1>Homepage</h1>
-<p>Welcome to SecondhandAuto!</p>
+<div class="jumbotron mt-4">
+  <h1 class="display-4">Welcome to SecondhandAuto!</h1>
+  <p class="lead">Your trusted partner for buying and selling quality used cars. Browse our inventory, list your vehicle, or get an accurate market value today!</p>
+  <hr class="my-4">
+  <div class="d-flex justify-content-center">
+    <a class="btn btn-primary btn-lg mx-2 mt-3" href="/browse/" role="button">Browse Cars</a>
+    <a class="btn btn-secondary btn-lg mx-2 mt-3" href="/sell/" role="button">Sell Your Car</a>
+  </div>
+</div>
 
+<div class="row text-center mt-5 mb-5">
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Wide Selection</h5>
+        <p class="card-text">Explore our inventory of vehicles to find the perfect match for your needs and budget.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Sell Easily</h5>
+        <p class="card-text">List your car in minutes with our hassle-free selling process.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Accurate Valuations</h5>
+        <p class="card-text">Get a reliable market value estimate for your vehicle with just a few clicks.</p>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

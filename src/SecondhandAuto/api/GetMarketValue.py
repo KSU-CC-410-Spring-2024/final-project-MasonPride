@@ -25,9 +25,10 @@ class GetMarketValue:
             data_list = []
             data_list.append(data["year"])
             data_list.append(data["make"])
+            data_list.append(data["model"])
             data_list.append(data["price_stats"]["min"])
             data_list.append(data["price_stats"]["max"])
             data_list.append(data["price_stats"]["geometric_mean"])
             return data_list
         except requests.exceptions.RequestException as e:
-            return f"An error occurred: {e}"
+            raise ValueError("Not a valid input")

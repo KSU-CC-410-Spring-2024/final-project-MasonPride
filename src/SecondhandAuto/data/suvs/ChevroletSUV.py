@@ -1,35 +1,35 @@
-"""Chevrolet Truck class.
+"""Chevrolet SUV class.
 
-This class creates a Chevrolet truck.
+This class creates a Chevrolet suv.
 
 Author: Mason Pride
 Version: 0.1
 """
-from src.SecondhandAuto.data.trucks.Truck import Truck
+from src.SecondhandAuto.data.suvs.SUV import SUV
 
 
-class ChevroletTruck(Truck):
-    """Represents a Chevrolet truck.
+class ChevroletSUV(SUV):
+    """Represents a Chevrolet suv.
 
-    Builds a Chevrolet truck.
+    Builds a Chevrolet suv.
     """
 
     def __init__(self) -> None:
         """Chevrolet class constructor.
 
         Creates an instance of a Chevrolet
-        truck.
+        suv.
         """
         super().__init__()
-        self.four_wd: bool = True
-        self.cab_type: str = "Extended Cab"
+        self.backup_cam: bool = False
+        self.folded_seats: bool = True
         self.__color: str = "Red"
 
     @property
     def price(self) -> int:
         """Price getter method.
 
-        Returns the price of the truck.
+        Returns the price of the suv.
         """
         return 8500
 
@@ -37,7 +37,7 @@ class ChevroletTruck(Truck):
     def color(self) -> str:
         """Color getter method.
 
-        Returns the color of the truck.
+        Returns the color of the suv.
         """
         return self.__color
 
@@ -45,15 +45,15 @@ class ChevroletTruck(Truck):
     def year(self) -> int:
         """Year getter method.
 
-        Gets the year of the truck
+        Gets the year of the suv
         """
-        return 1997
+        return 2009
 
     @property
     def make(self) -> str:
         """Make getter method.
 
-        Gets the make of the truck.
+        Gets the make of the suv.
         """
         return "Chevrolet"
 
@@ -61,9 +61,9 @@ class ChevroletTruck(Truck):
     def model(self) -> str:
         """Model getter method.
 
-        Gets the model of the Truck
+        Gets the model of the suv
         """
-        return "Silverado 1500"
+        return "Trailblazer"
 
     def __str__(self) -> str:
         """String override method."""

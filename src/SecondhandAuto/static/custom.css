@@ -1,3 +1,32 @@
+ul.vehcile-list {
+    padding: 15px;
+    margin: 10px;
+    border-top: 1px solid grey;
+}
+
+.vehicle-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.vehicle {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    width: 335px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.vehicle h3 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.vehicle p {
+    font-size: 0.9em;
+    color: #3f3f3f;
+}
 
 /* Bootstrap */
 /* Custom page CSS
@@ -25,11 +54,11 @@ code {
 .navbar {
     background-color: rgb(84, 164, 255);
     display: flex;
-    justify-content: space-between; /* Space out brand and links */
-    align-items: center; /* Ensure both brand and links are vertically centered */
-    width: 100%; /* Ensure the navbar spans the full width of the screen */
-    padding-left: 50px; /* Padding for the left side */
-    padding-right: 15px; /* Padding for the right side */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 15px
 }
 
 .navbar-brand  {
@@ -49,10 +78,20 @@ code {
 
 .navbar .navbar-collapse {
     display: flex;
-    justify-content: center; /* Center the links container horizontally */
-    flex-grow: 1; /* Allow links container to take up the remaining space */
+    justify-content: center;
+    flex-grow: 1;
 }
 
 .navbar .nav-link:hover {
     color: grey !important;
+}
+
+.card:hover {
+  color: rgb(84, 164, 255) !important;
+  transition: color 0.3s ease;
+}
+
+.display-4{
+  text-align: center;
+  font-weight: bold;
 }

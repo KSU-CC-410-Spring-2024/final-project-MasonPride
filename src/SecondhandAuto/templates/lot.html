@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}Menu{% endblock %}
+
+{% block content %}
+
+<h1 class="menu-title">Lot</h1>
+
+<h2 class="item-heading">Trucks</h2>
+<ul class="vehicle-list">
+{% for truck in lot.trucks() %}
+        <div class="vehicle">
+            <h5>{{truck}}</h5>
+            <p>{{ "${:,.2f}".format(truck.price) }}</p>
+            <p>{{ truck.color }}</p>
+            {% if truck.four_wd %}
+            <p>Four Wheel Drive: Yes</p>
+            {% else %}
+            <p>Four Wheel Drive: No</p>
+            {% endif %}
+            <p>Cab Type: {{ truck.cab_type }}</p>
+        </div>
+{% endfor %}
+</ul>
+
+<h2 class="item-heading">SUV's</h2>
+<ul class="vehicle-list">
+{% for suv in lot.suvs() %}
+        <div class="vehicle">
+            <h5>{{suv}}</h5>
+            <p>{{ "${:,.2f}".format(suv.price) }}</p>
+            <p>{{ suv.color }}</p>
+            {% if suv.backup_cam %}
+            <p>Backup Camera: Yes</p>
+            {% else %}
+            <p>Backup Camera: No</p>
+            {% endif %}
+            {% if suv.folded_seats %}
+            <p>Folding Seats: Yes</p>
+            {% else %}
+            <p>Folding Seats: No</p>
+            {% endif %}
+        </div>
+{% endfor %}
+</ul>
+{% endblock %}

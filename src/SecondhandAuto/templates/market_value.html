@@ -23,13 +23,21 @@
             <input type="text" class="form-control" id="model" name="model" placeholder="Enter Model" value="{{model}}">
         </div>
     </div>
-<button type="submit" class="btn btn-primary">
+    <button type="submit" class="btn btn-primary mb-3">
         Submit
     </button>
 </form>
 {% if data %}
-    {% for item in data %}
-    <p>{{item}}</p>
-    {% endfor %}
+    <div class="card mb-3">
+        <div class="card-body">
+            <h4 class="card-title">{{ data[0] }} {{ data[1] }} ({{ data[2] }})</h4>
+            <p class="card-text">
+                <strong>Estimated Price:</strong> ${{ "{:,}".format(data[5] | int) }}<br>
+                    <strong>Price Range:</strong> ${{ "{:,}".format(data[3] | int) }} - ${{ "{:,}".format(data[4] | int) }}
+            </p>
+        </div>
+    </div>
+{% elif error %}
+    <p class="text-danger">{{ error }}</p>
 {% endif %}
 {% endblock %}

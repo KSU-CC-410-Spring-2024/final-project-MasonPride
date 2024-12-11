@@ -7,7 +7,7 @@ Version: 0.1
 """
 from flask import render_template, request
 from flask_classful import FlaskView, route  # type: ignore
-#from src.gamegrub.data.menu.Menu import Menu
+from src.SecondhandAuto.data.lot.Lot import Lot
 from src.SecondhandAuto.api.GetMarketValue import GetMarketValue
 
 
@@ -26,6 +26,18 @@ class WebController(FlaskView):
         """
         return render_template("index.html")
 
+    @route('/browse/')
+    def browse(self):
+        """Browse route method.
+
+        Defines the route for browse
+
+        Returns:
+            render template of our lot
+        """
+        lot = Lot()
+        return render_template("lot.html", lot=lot)
+
     @route('/market-value/', methods=['GET'])
     def market_value(self):
         """Market value.
@@ -43,5 +55,9 @@ class WebController(FlaskView):
         year: str = request.form.get('year', None)
         make: str = request.form.get('make', None)
         model: str = request.form.get('model', None)
-        data = GetMarketValue.get_value(year, make, model)
-        return render_template("market_value.html", data=data)
+        try:
+            data = GetMarketValue.get_value(year, make, model)
+            return render_template("market_value.html", data=data)
+        except Exception as e:
+            error = e
+            return render_template("market_value.html", error=error)
