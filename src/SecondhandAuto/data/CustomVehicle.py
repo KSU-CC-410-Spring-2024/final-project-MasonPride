@@ -12,15 +12,15 @@ from typing import List
 class CustomVehicle(Vehicle):
     """CustomVehicle class."""
 
-    def __init__(self, year: int = 0,
-                 make: str = "None",
-                 model: str = "None") -> None:
+    def __init__(self, year: int = None,
+                 make: str = None,
+                 model: str = None) -> None:
         """Constructor for the class."""
         self.__year = year
         self.__make = make
         self.__model = model
-        self.__price: int = 0
-        self.__mileage: int = 0
+        self.__price: int = None
+        self.__mileage: int = None
 
     @property
     def year(self) -> int:

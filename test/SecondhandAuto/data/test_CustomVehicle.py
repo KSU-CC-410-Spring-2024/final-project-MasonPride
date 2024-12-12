@@ -15,27 +15,27 @@ class TestCustomVehicle():
     def test_year_is_none_init(self):
         """Test year init."""
         custom = CustomVehicle()
-        assert custom.year == 0
+        assert custom.year == None
 
     def test_make_is_none_init(self):
         """Test make init."""
         custom = CustomVehicle()
-        assert custom.make == "None"
+        assert custom.make == None
 
     def test_model_is_none_init(self):
         """Test model init."""
         custom = CustomVehicle()
-        assert custom.model == "None"
+        assert custom.model == None
 
     def test_price_is_0_init(self):
         """Test price init."""
         custom = CustomVehicle()
-        assert custom.price == 0
+        assert custom.price == None
     
     def test_mielage_is_0_init(self):
         """Test mileage init."""
         custom = CustomVehicle()
-        assert custom.mileage == 0
+        assert custom.mileage == None
 
     @pytest.mark.parametrize("year", [1999, 2012, 2003, 2026])
     def test_year_setter_works(self, year):

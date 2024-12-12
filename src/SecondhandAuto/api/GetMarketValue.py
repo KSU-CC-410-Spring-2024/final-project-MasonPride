@@ -12,7 +12,10 @@ import creds
 
 
 class GetMarketValue:
-    """Get Market Value class."""
+    """Get Market Value class.
+    
+    API comes from MarketCheck.com
+    """
     @staticmethod
     def get_value(year: int, make: str, model: str) -> List[str]:
         """Get value method.

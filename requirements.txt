@@ -15,3 +15,4 @@ flask-classful
 python-dotenv
 flask-wtf
 requests
+types-requests

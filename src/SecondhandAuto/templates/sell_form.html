@@ -58,6 +58,19 @@
             {% endif %}
         </div>
     </div>
+    <div class="form-row">
+        <div class="col form-group">
+            {{ form.price.label }}
+            {% if form.price.errors %}
+                {{ form.price(class_="form-control is-invalid") }}
+                {% for error in form.mileage.errors %}
+                    <span class="invalid-feedback">{{ error }}</span>
+                {% endfor %}
+            {% else %}
+                {{ form.price(class_="form-control") }}
+            {% endif %}
+        </div>
+    </div>
     <button type="submit" class="btn btn-primary">
         Submit
     </button>

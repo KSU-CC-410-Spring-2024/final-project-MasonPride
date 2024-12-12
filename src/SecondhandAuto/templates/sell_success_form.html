@@ -4,7 +4,15 @@
 
 {% block content %}
 
-<h3> We are willing to offer you...</h3>
-<h4>${{ "{:,}".format(our_price | int) }}</h4>
+<div class="jumbotron mt-4">
+  <h1 class="display-2">Our estimated offer...</h1>
+  <p class="lead"><b>${{ "{:,}".format(our_price | int) }}</b></p>
+  <p class="lead">A representative will reach our to you with more information!</p>
+  <hr class="my-4">
+  <div class="d-flex justify-content-center">
+    <a class="btn btn-primary btn-lg mx-2 mt-3" href="/browse/" role="button">Browse Cars</a>
+    <a class="btn btn-secondary btn-lg mx-2 mt-3" href="/sell/" role="button">Sell Your Car</a>
+  </div>
+</div>
 
 {% endblock %}

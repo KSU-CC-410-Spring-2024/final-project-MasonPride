@@ -10,3 +10,4 @@ class NewVehicleForm(FlaskForm):
     make = StringField("Make", [validators.Length(min=1)])
     model = StringField("Model", [validators.Length(min=1)])
     mileage = IntegerField("Mileage", [validators.NumberRange(min=0, max=500000)], widget=NumberInput(step=1))
+    price = IntegerField("Price", [validators.NumberRange(min=0, max=500000)], widget=NumberInput(step=1))

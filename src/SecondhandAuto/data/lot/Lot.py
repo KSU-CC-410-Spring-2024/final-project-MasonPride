@@ -80,14 +80,11 @@ class Lot():
 
         Returns all vehicles on the lot
         """
-        vehicles: List[Vehicle] = []
-        chevy = ChevroletTruck()
-        vehicles.append(chevy)
-        ford = FordTruck()
-        vehicles.append(ford)
-        dodge = DodgeTruck()
-        vehicles.append(dodge)
-        return vehicles
+        trucks = Lot.trucks()
+        suvs = Lot.suvs()
+        sedans = Lot.sedans()
+        full_lot = trucks + suvs + sedans
+        return full_lot
 
     @staticmethod
     def get_our_price(mileage: int, market_value: int) -> int:
@@ -103,8 +100,8 @@ class Lot():
             int representing our price
         """
         if mileage <= 100000:
-            return market_value - (.1 * market_value)
+            return int(market_value - (.1 * market_value))
         elif mileage > 100000 and mileage <= 200000:
-            return market_value - (.25 * market_value)
+            return int(market_value - (.25 * market_value))
         else:
-            return market_value - (.45 * market_value)
+            return int(market_value - (.45 * market_value))

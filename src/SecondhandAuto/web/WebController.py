@@ -55,7 +55,8 @@ class WebController(FlaskView):
             return render_template("sell_form.html", form=form)
         market_value = GetMarketValue.get_value(form.year.data, form.make.data, form.model.data)
         market_value = market_value[5]
-        our_price = Lot().get_our_price(int(form.mileage.data), int(market_value))
+        avg = ((market_value + form.price.data) /2)
+        our_price = Lot().get_our_price(int(form.mileage.data), avg)
         return render_template("sell_success_form.html", our_price=our_price)
 
     @route('/market-value/', methods=['GET'])
