@@ -88,3 +88,23 @@ class Lot():
         dodge = DodgeTruck()
         vehicles.append(dodge)
         return vehicles
+
+    @staticmethod
+    def get_our_price(mileage: int, market_value: int) -> int:
+        """Our price method.
+
+        Calculates the price we are willing to pay 
+        based on the mielage and market value
+
+        Args:
+            market_value: int representing market price
+
+        Returns:
+            int representing our price
+        """
+        if mileage <= 100000:
+            return market_value - (.1 * market_value)
+        elif mileage > 100000 and mileage <= 200000:
+            return market_value - (.25 * market_value)
+        else:
+            return market_value - (.45 * market_value)

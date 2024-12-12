@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% block title %}Homepage{% endblock %}
+{% block title %}SecondhandAuto{% endblock %}
 
 {% block content %}
 <h1>Market Value</h1>
@@ -23,6 +23,11 @@
             <input type="text" class="form-control" id="model" name="model" placeholder="Enter Model" value="{{model}}">
         </div>
     </div>
+    <div class="form-row">
+        <div class="col form-group">
+            <input type="text" class="form-control" id="mileage" name="mileage" placeholder="Enter Mileage" value="{{mileage}}">
+        </div>
+    </div>
     <button type="submit" class="btn btn-primary mb-3">
         Submit
     </button>
@@ -30,10 +35,11 @@
 {% if data %}
     <div class="card mb-3">
         <div class="card-body">
-            <h4 class="card-title">{{ data[0] }} {{ data[1] }} ({{ data[2] }})</h4>
+            <h4 class="card-title">{{ data[0] }} {{ data[1] }} {{ data[2] }}</h4>
             <p class="card-text">
                 <strong>Estimated Price:</strong> ${{ "{:,}".format(data[5] | int) }}<br>
-                    <strong>Price Range:</strong> ${{ "{:,}".format(data[3] | int) }} - ${{ "{:,}".format(data[4] | int) }}
+                    <strong>Price Range:</strong> ${{ "{:,}".format(data[3] | int) }} - ${{ "{:,}".format(data[4] | int) }}<br>
+                <strong>We will offer you:</strong> ${{ "{:,}".format(our_price) }}
             </p>
         </div>
     </div>

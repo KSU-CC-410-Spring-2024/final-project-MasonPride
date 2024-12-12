@@ -14,7 +14,7 @@ import creds
 class GetMarketValue:
     """Get Market Value class."""
     @staticmethod
-    def get_value(year: str, make: str, model: str) -> List[str]:
+    def get_value(year: int, make: str, model: str) -> List[str]:
         """Get value method.
 
         Gets the values from the API using
@@ -46,5 +46,5 @@ class GetMarketValue:
             data_list.append(data["price_stats"]["max"])
             data_list.append(data["price_stats"]["geometric_mean"])
             return data_list
-        except requests.exceptions.RequestException:
-            raise ValueError("Not a valid input")
+        except requests.exceptions.RequestException as e:
+            raise ValueError("Invalid input or vehicle information not found")

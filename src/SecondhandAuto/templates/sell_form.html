@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title%}secondhandAuto - Sell{% endblock %}
+
+{% block content %}
+
+<form action="/sell/" method="POST">
+    <h1>List your car by entering these details...</h3>
+    <div class="form-row">
+        <div class="col form-group">
+            {{ form.year.label }}
+            {% if form.year.errors %}
+                {{ form.year(class_="form-control is-invalid") }}
+                {% for error in form.year.errors %}
+                    <span class="invalid-feedback">{{ error }}</span>
+                {% endfor %}
+            {% else %}
+                {{ form.year(class_="form-control") }}
+            {% endif %}
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col form-group">
+            {{ form.make.label }}
+            {% if form.make.errors %}
+                {{ form.make(class_="form-control is-invalid") }}
+                {% for error in form.make.errors %}
+                    <span class="invalid-feedback">{{ error }}</span>
+                {% endfor %}
+            {% else %}
+                {{ form.make(class_="form-control") }}
+            {% endif %}
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col form-group">
+            {{ form.model.label }}
+            {% if form.model.errors %}
+                {{ form.model(class_="form-control is-invalid") }}
+                {% for error in form.model.errors %}
+                    <span class="invalid-feedback">{{ error }}</span>
+                {% endfor %}
+            {% else %}
+                {{ form.model(class_="form-control") }}
+            {% endif %}
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col form-group">
+            {{ form.mileage.label }}
+            {% if form.mileage.errors %}
+                {{ form.mileage(class_="form-control is-invalid") }}
+                {% for error in form.mileage.errors %}
+                    <span class="invalid-feedback">{{ error }}</span>
+                {% endfor %}
+            {% else %}
+                {{ form.mileage(class_="form-control") }}
+            {% endif %}
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">
+        Submit
+    </button>
+</form>
+
+{% endblock %}

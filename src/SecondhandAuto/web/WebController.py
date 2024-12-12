@@ -50,9 +50,13 @@ class WebController(FlaskView):
     @route('/sell/', methods=['POST'])
     def sell_form_return(self):
         """Sell form."""
-        vehicle = CustomVehicle()
-        form = NewVehicleForm(obj=vehicle)
-        return render_template("sell_form.html", form=form)
+        form = NewVehicleForm()
+        if not form.validate_on_submit():
+            return render_template("sell_form.html", form=form)
+        market_value = GetMarketValue.get_value(form.year.data, form.make.data, form.model.data)
+        market_value = market_value[5]
+        our_price = Lot().get_our_price(int(form.mileage.data), int(market_value))
+        return render_template("sell_success_form.html", our_price=our_price)
 
     @route('/market-value/', methods=['GET'])
     def market_value(self):
@@ -71,9 +75,11 @@ class WebController(FlaskView):
         year: str = request.form.get('year', None)
         make: str = request.form.get('make', None)
         model: str = request.form.get('model', None)
+        mileage: str = request.form.get('mileage', None)
         try:
             data = GetMarketValue.get_value(year, make, model)
-            return render_template("market_value.html", data=data)
+            our_price = Lot().get_our_price(int(mileage), int(data[5]))
+            return render_template("market_value.html", data=data, our_price=our_price)
         except Exception as e:
             error = e
             return render_template("market_value.html", error=error)
