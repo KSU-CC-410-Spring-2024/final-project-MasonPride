@@ -1,5 +1,7 @@
 This is my final project for CC410 Advanced Programming!
 
+[Documentation](https://ksu-cc-410-spring-2024.github.io/final-project-MasonPride/)
+
 This project is meant to serve as a simple data infrastructure, as well as
 a web interface end user experience. The two main components of this project are the use of my data
 and web packages.
@@ -11,6 +13,7 @@ The web package contains web routing as well as web pages with
 functionality. These include a homepage, browse page (browse vehicles on the lot), sell page (list your car 
 using year, make, model, mileage, and asking price), and market value page (uses api to market value of car).
 
+Here is a link to my [presentation](https://www.youtube.com/watch?v=StsP1NC3mn4)!
 
 To use:
 - Add 'creds.py' file to root of project
