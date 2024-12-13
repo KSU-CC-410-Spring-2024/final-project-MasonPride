@@ -13,6 +13,9 @@ The web package contains web routing as well as web pages with
 functionality. These include a homepage, browse page (browse vehicles on the lot), sell page (list your car 
 using year, make, model, mileage, and asking price), and market value page (uses api to market value of car).
 
+The cool feature I added to me program is the ability to request the API for car information 
+and calculate the estimated offer price!
+
 Here is a link to my [presentation](https://www.youtube.com/watch?v=StsP1NC3mn4)!
 
 To use:
