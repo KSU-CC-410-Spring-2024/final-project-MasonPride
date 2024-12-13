@@ -1,7 +1,7 @@
 This is my final project for CC410 Advanced Programming!
 
 This project is meant to serve as a simple data infrastructure, as well as
-a web interface end user experience.The two main components of this project are the use of my data
+a web interface end user experience. The two main components of this project are the use of my data
 and web packages.
 
 The data package contains classes that create different vehicle types, as well
