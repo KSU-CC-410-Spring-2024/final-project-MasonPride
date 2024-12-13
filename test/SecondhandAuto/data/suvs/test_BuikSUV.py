@@ -4,23 +4,20 @@ Author: Mason Pride mtpride@ksu.edu
 Version: 0.1
 """
 
-from pytest import CaptureFixture
-from _pytest.capture import CaptureResult
-from typing import Any
-import pytest
 from src.SecondhandAuto.data.suvs.BuikSUV import BuikSUV
+
 
 class TestBuikSUV():
     """Test class for 'buikSUV.py'."""
     def test_backup_cam_false_on_init(self):
         """Test backup cam init."""
         buik = BuikSUV()
-        assert buik.backup_cam == True
+        assert buik.backup_cam
 
     def test_folded_seats_true_on_init(self):
         """Test nav init."""
         buik = BuikSUV()
-        assert buik.folded_seats == True
+        assert buik.folded_seats
 
     def test_color_beige_on_init(self):
         """Test color init."""

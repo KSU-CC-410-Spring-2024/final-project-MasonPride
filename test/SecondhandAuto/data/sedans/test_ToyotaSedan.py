@@ -4,23 +4,20 @@ Author: Mason Pride mtpride@ksu.edu
 Version: 0.1
 """
 
-from pytest import CaptureFixture
-from _pytest.capture import CaptureResult
-from typing import Any
-import pytest
 from src.SecondhandAuto.data.sedans.ToyotaSedan import ToyotaSedan
+
 
 class TestToyotaSedan():
     """Test class for 'ToyotaSedan.py'."""
     def test_led_lights_false_on_init(self):
         """Test LED lights init."""
         toyota = ToyotaSedan()
-        assert toyota.led_lights == False
+        assert not toyota.led_lights
 
     def test_nav_system_true_on_init(self):
         """Test nav init."""
         toyota = ToyotaSedan()
-        assert toyota.nav_system == False
+        assert not toyota.nav_system
 
     def test_color_beige_on_init(self):
         """Test color init."""
@@ -34,8 +31,8 @@ class TestToyotaSedan():
 
     def test_year_on_init(self):
         """Test year init."""
-        Toyota = ToyotaSedan()
-        assert Toyota.year == 2002
+        toyota = ToyotaSedan()
+        assert toyota.year == 2002
 
     def test_make_on_init(self):
         """Test make init."""
@@ -52,7 +49,7 @@ class TestToyotaSedan():
         toyota = ToyotaSedan()
         assert toyota.mileage == 134700
 
-    def test_Toyota_to_string(self):
+    def test_toyota_to_string(self):
         """Test to string method."""
         toyota = ToyotaSedan()
         real = "2002 Toyota Camry"

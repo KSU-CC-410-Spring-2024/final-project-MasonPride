@@ -4,18 +4,15 @@ Author: Mason Pride mtpride@ksu.edu
 Version: 0.1
 """
 
-from pytest import CaptureFixture
-from _pytest.capture import CaptureResult
-from typing import Any
-import pytest
 from src.SecondhandAuto.data.trucks.DodgeTruck import DodgeTruck
+
 
 class TestDodgeTruck():
     """Test class for 'DodgeTruck.py'."""
     def test_backup_cam_false_on_init(self):
         """Test backup cam init."""
         dodge = DodgeTruck()
-        assert dodge.four_wd == False
+        assert not dodge.four_wd
 
     def test_folded_seats_true_on_init(self):
         """Test nav init."""
@@ -52,7 +49,7 @@ class TestDodgeTruck():
         dodge = DodgeTruck()
         assert dodge.mileage == 100000
 
-    def test_Dodge_to_string(self):
+    def test_dodge_to_string(self):
         """Test to string method."""
         dodge = DodgeTruck()
         real = "2007 Dodge Ram 1500"

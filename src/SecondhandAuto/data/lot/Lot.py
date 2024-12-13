@@ -6,7 +6,6 @@ Author: Mason Pride
 Version: 0.1
 """
 from typing import List
-from src.SecondhandAuto.data.Vehicle import Vehicle
 from src.SecondhandAuto.data.trucks.Truck import Truck
 from src.SecondhandAuto.data.suvs.SUV import SUV
 from src.SecondhandAuto.data.sedans.Sedan import Sedan
@@ -75,7 +74,7 @@ class Lot():
         return sedan
 
     @staticmethod
-    def on_lot() -> List[Vehicle]:
+    def on_lot() -> List:
         """On lot method.
 
         Returns all vehicles on the lot
@@ -83,14 +82,14 @@ class Lot():
         trucks = Lot.trucks()
         suvs = Lot.suvs()
         sedans = Lot.sedans()
-        full_lot = trucks + suvs + sedans
+        full_lot: List = trucks + suvs + sedans
         return full_lot
 
     @staticmethod
     def get_our_price(mileage: int, market_value: int) -> int:
         """Our price method.
 
-        Calculates the price we are willing to pay 
+        Calculates the price we are willing to pay
         based on the mielage and market value
 
         Args:

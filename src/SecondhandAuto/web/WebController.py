@@ -53,9 +53,11 @@ class WebController(FlaskView):
         form = NewVehicleForm()
         if not form.validate_on_submit():
             return render_template("sell_form.html", form=form)
-        market_value = GetMarketValue.get_value(form.year.data, form.make.data, form.model.data)
+        market_value = GetMarketValue.get_value(form.year.data,
+                                                form.make.data,
+                                                form.model.data)
         market_value = market_value[5]
-        avg = ((market_value + form.price.data) /2)
+        avg = ((market_value + form.price.data) / 2)
         our_price = Lot().get_our_price(int(form.mileage.data), avg)
         return render_template("sell_success_form.html", our_price=our_price)
 
@@ -80,7 +82,9 @@ class WebController(FlaskView):
         try:
             data = GetMarketValue.get_value(year, make, model)
             our_price = Lot().get_our_price(int(mileage), int(data[5]))
-            return render_template("market_value.html", data=data, our_price=our_price)
+            return render_template("market_value.html",
+                                   data=data,
+                                   our_price=our_price)
         except Exception as e:
             error = e
             return render_template("market_value.html", error=error)

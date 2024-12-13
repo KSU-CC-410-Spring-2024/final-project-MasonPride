@@ -4,3 +4,5 @@ reports/
 .coverage
 *.pyc
 creds.py
+build
+*.egg-info/

@@ -4,23 +4,20 @@ Author: Mason Pride mtpride@ksu.edu
 Version: 0.1
 """
 
-from pytest import CaptureFixture
-from _pytest.capture import CaptureResult
-from typing import Any
-import pytest
 from src.SecondhandAuto.data.sedans.KiaSedan import KiaSedan
+
 
 class TestKiaSedan():
     """Test class for 'KiaSedan.py'."""
     def test_led_lights_false_on_init(self):
         """Test LED lights init."""
         kia = KiaSedan()
-        assert kia.led_lights == False
+        assert not kia.led_lights
 
     def test_nav_system_true_on_init(self):
         """Test nav init."""
         kia = KiaSedan()
-        assert kia.nav_system == True
+        assert kia.nav_system
 
     def test_color_beige_on_init(self):
         """Test color init."""

@@ -4,38 +4,36 @@ Author: Mason Pride mtpride@ksu.edu
 Version: 0.1
 """
 
-from pytest import CaptureFixture
-from _pytest.capture import CaptureResult
-from typing import Any
 import pytest
 from src.SecondhandAuto.data.CustomVehicle import CustomVehicle
+
 
 class TestCustomVehicle():
     """Test class for CustomVehicle."""
     def test_year_is_none_init(self):
         """Test year init."""
         custom = CustomVehicle()
-        assert custom.year == None
+        assert custom.year is None
 
     def test_make_is_none_init(self):
         """Test make init."""
         custom = CustomVehicle()
-        assert custom.make == None
+        assert custom.make is None
 
     def test_model_is_none_init(self):
         """Test model init."""
         custom = CustomVehicle()
-        assert custom.model == None
+        assert custom.model is None
 
     def test_price_is_0_init(self):
         """Test price init."""
         custom = CustomVehicle()
-        assert custom.price == None
-    
+        assert custom.price is None
+
     def test_mielage_is_0_init(self):
         """Test mileage init."""
         custom = CustomVehicle()
-        assert custom.mileage == None
+        assert custom.mileage is None
 
     @pytest.mark.parametrize("year", [1999, 2012, 2003, 2026])
     def test_year_setter_works(self, year):
@@ -51,7 +49,8 @@ class TestCustomVehicle():
         custom.make = make
         assert make == custom.make
 
-    @pytest.mark.parametrize("model", ["Trailblazer", "Camry", "Fiat", "Highlander"])
+    @pytest.mark.parametrize("model", ["Trailblazer", "Camry", "Fiat",
+                             "Highlander"])
     def test_model_setter_works(self, model):
         """Test model setter."""
         custom = CustomVehicle()

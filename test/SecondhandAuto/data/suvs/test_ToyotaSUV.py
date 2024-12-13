@@ -4,23 +4,20 @@ Author: Mason Pride mtpride@ksu.edu
 Version: 0.1
 """
 
-from pytest import CaptureFixture
-from _pytest.capture import CaptureResult
-from typing import Any
-import pytest
 from src.SecondhandAuto.data.suvs.ToyotaSUV import ToyotaSUV
+
 
 class TestToyotaSUV():
     """Test class for 'ToyotaSUV.py'."""
     def test_backup_cam_false_on_init(self):
         """Test backup cam init."""
         toyota = ToyotaSUV()
-        assert toyota.backup_cam == False
+        assert not toyota.backup_cam
 
     def test_folded_seats_true_on_init(self):
         """Test nav init."""
         toyota = ToyotaSUV()
-        assert toyota.folded_seats == True
+        assert toyota.folded_seats
 
     def test_color_on_init(self):
         """Test color init."""
@@ -52,7 +49,7 @@ class TestToyotaSUV():
         toyota = ToyotaSUV()
         assert toyota.mileage == 189400
 
-    def test_Toyota_to_string(self):
+    def test_toyota_to_string(self):
         """Test to string method."""
         toyota = ToyotaSUV()
         real = "2012 Toyota Highlander"

@@ -7,7 +7,7 @@ Author: Mason Pride
 Version: 0.1
 """
 from abc import ABC, abstractmethod
-from typing import List
+from typing import List, Optional
 
 
 class Vehicle(ABC):
@@ -34,7 +34,7 @@ class Vehicle(ABC):
 
     @property
     @abstractmethod
-    def make(self) -> str:
+    def make(self) -> Optional[str]:
         """Make getter.
 
         Raises NotImplementedError.
@@ -43,7 +43,7 @@ class Vehicle(ABC):
 
     @property
     @abstractmethod
-    def model(self) -> str:
+    def model(self) -> Optional[str]:
         """Model getter.
 
         Raises NotImplementedError.
@@ -52,7 +52,7 @@ class Vehicle(ABC):
 
     @property
     @abstractmethod
-    def year(self) -> int:
+    def year(self) -> Optional[int]:
         """Year getter.
 
         Raises NotImplementedError.

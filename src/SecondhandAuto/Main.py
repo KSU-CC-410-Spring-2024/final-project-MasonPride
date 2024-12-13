@@ -6,7 +6,6 @@ Author: Mason Pride
 Version: 0.1
 """
 from typing import List
-from src.SecondhandAuto.data.lot.Lot import Lot
 
 
 class Main:
@@ -16,6 +15,3 @@ class Main:
     def main(args: List[str]) -> None:
         """Main method."""
         print("Hello World")
-        lot = Lot.on_lot()
-        for car in lot:
-            print(car)

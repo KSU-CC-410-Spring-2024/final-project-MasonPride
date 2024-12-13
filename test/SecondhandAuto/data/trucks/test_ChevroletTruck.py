@@ -4,18 +4,15 @@ Author: Mason Pride mtpride@ksu.edu
 Version: 0.1
 """
 
-from pytest import CaptureFixture
-from _pytest.capture import CaptureResult
-from typing import Any
-import pytest
 from src.SecondhandAuto.data.trucks.ChevroletTruck import ChevroletTruck
+
 
 class TestChevroletTruck():
     """Test class for 'ChevroletTruck.py'."""
     def test_backup_cam_false_on_init(self):
         """Test backup cam init."""
         chevrolet = ChevroletTruck()
-        assert chevrolet.four_wd == True
+        assert chevrolet.four_wd
 
     def test_folded_seats_true_on_init(self):
         """Test nav init."""

@@ -6,24 +6,24 @@ Author: Mason Pride
 Version: 0.1
 """
 from src.SecondhandAuto.data.Vehicle import Vehicle
-from typing import List
+from typing import Optional
 
 
 class CustomVehicle(Vehicle):
     """CustomVehicle class."""
 
-    def __init__(self, year: int = None,
-                 make: str = None,
-                 model: str = None) -> None:
+    def __init__(self, year: Optional[int] = None,
+                 make: Optional[str] = None,
+                 model: Optional[str] = None) -> None:
         """Constructor for the class."""
         self.__year = year
         self.__make = make
         self.__model = model
-        self.__price: int = None
-        self.__mileage: int = None
+        self.__price: Optional[int] = None
+        self.__mileage: Optional[int] = None
 
     @property
-    def year(self) -> int:
+    def year(self) -> Optional[int]:
         """Getter method for year."""
         return self.__year
 
@@ -33,7 +33,7 @@ class CustomVehicle(Vehicle):
         self.__year = value
 
     @property
-    def make(self) -> str:
+    def make(self) -> Optional[str]:
         """Getter make for year."""
         return self.__make
 
@@ -43,7 +43,7 @@ class CustomVehicle(Vehicle):
         self.__make = value
 
     @property
-    def model(self) -> str:
+    def model(self) -> Optional[str]:
         """Getter make for model."""
         return self.__model
 
@@ -53,7 +53,7 @@ class CustomVehicle(Vehicle):
         self.__model = value
 
     @property
-    def price(self) -> int:
+    def price(self) -> Optional[int]:
         """Getter method for price."""
         return self.__price
 
@@ -63,7 +63,7 @@ class CustomVehicle(Vehicle):
         self.__price = value
 
     @property
-    def mileage(self) -> int:
+    def mileage(self) -> Optional[int]:
         """Getter method for mileage."""
         return self.__mileage
 

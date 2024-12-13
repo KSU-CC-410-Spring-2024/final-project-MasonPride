@@ -13,7 +13,7 @@ import creds
 
 class GetMarketValue:
     """Get Market Value class.
-    
+
     API comes from MarketCheck.com
     """
     @staticmethod
@@ -49,5 +49,5 @@ class GetMarketValue:
             data_list.append(data["price_stats"]["max"])
             data_list.append(data["price_stats"]["geometric_mean"])
             return data_list
-        except requests.exceptions.RequestException as e:
+        except requests.exceptions.RequestException:
             raise ValueError("Invalid input or vehicle information not found")
